@@ -24,16 +24,11 @@
 
 
 	<input type="button" onclick="setDW()" value="设置数据窗口对象">
-	<input type="button" onclick="insertDW()" value="插入记录">
-	<input type="button" onclick="deleteDW()" value="删除一行">
-	<input type="button" onclick="updateDW()" value="保存">
+	<input type="button" onclick="retrieveDW()" value="产品清单，文本框显示">
+	<input type="button" onclick="insertDW()" value="插入一条记录（空记录）">
+	<input type="button" onclick="deleteDW()" value="删除一行记录（不入库）">
+	<input type="button" onclick="updateDW()" value="保存到数据库">
 	<br>
-	<input type="button" onclick="retrieveDW()" value="产品清单，文本框">
-	<input type="button" onclick="retrieveDW2()" value="产品清单，带下拉框">
-	<input type="button" onclick="retrieveDW3()" value="产品清单，自由格式">	
-	<input type="button" onclick="retrieveDW4()" value="人员列表，带单选按钮">	
-	<input type="button" onclick="retrieveDW5()" value="人员列表，带复选按钮">
-	<input type="button" onclick="retrieveDW6()" value="人员部门列表">
 	<div id="Picture1" name="Picture1"
 		style="position: absolute; left: 10px; top: 200px; height: 360px; width: 1000px; overflow: auto">
 		<div id="Picture2" name="Picture2"
@@ -106,44 +101,6 @@
 			iret3 = webdwui.retrieve(dwname);
 		}
 		
-		//检索数据，由于后台是无状态的，因此需要重新传入数据窗口的名称进行检索
-		function retrieveDW2() {
-			alert("retrieve test");
-			var dwname = "d_products_grid";
-			var iret3 = 0;
-			iret3 = webdwui.retrieve(dwname);
-		}
-		
-		//检索数据，由于后台是无状态的，因此需要重新传入数据窗口的名称进行检索
-		function retrieveDW3() {
-			alert("retrieve test");
-			var dwname = "d_product_freedom";
-			var iret3 = 0;
-			iret3 = webdwui.retrieve(dwname);
-		}
-		//检索数据，这个数据窗口带有单选按钮
-		function retrieveDW4() {
-			alert("retrieve test");
-			var dwname = "d_employee_list";
-			var iret3 = 0;
-			iret3 = webdwui.retrieve(dwname);
-		}
-		//检索数据，这个数据窗口带有单选按钮
-		function retrieveDW5() {
-			alert("retrieve test");
-			var dwname = "d_employee";
-			//var dwname = "d_dept_v9";
-			var iret3 = 0;
-			iret3 = webdwui.retrieve(dwname);
-		}
-		//检索数据，这个数据窗口带有单选按钮
-		function retrieveDW6() {
-			alert("retrieve test");
-			var dwname = "d_dept_employee";
-			//var dwname = "d_dept_v9";
-			var iret3 = 0;
-			iret3 = webdwui.retrieve(dwname);
-		}
 	</script>
 
 </body>
