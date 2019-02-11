@@ -27,7 +27,7 @@
 	<input type="button" onclick="retrieveDW()" value="检索产品清单（文本框显示）">
 	<input type="button" onclick="insertDW()" value="插入一条记录（空记录）">
 	<input type="button" onclick="deleteDW()" value="删除一行记录（不入库）">
-	<input type="button" onclick="updateDW()" value="保存到数据库">
+	<input type="button" onclick="updateDW()" value="保存到数据库(待调试)">
 	<br>
 	<div id="Picture1" name="Picture1"
 		style="position: absolute; left: 10px; top: 200px; height: 360px; width: 1000px; overflow: auto">
@@ -59,7 +59,7 @@
 		
 		//设置后台的数据窗口对象
 		function insertDW() {
-			alert("insert test");
+			console.log("insert test");
 			var uuid = webdwui.uuid; //后台数据窗口的名字
 			var iret2 = 0;
 			iret2 = webdwui.insert(uuid);
@@ -72,15 +72,17 @@
 			iret2 = webdwui.delete(uuid);
 		}
 		
+		//setrow
 		function setRow(rowid) {
-			alert("setrow test:"+rowid);
+			console.log("setrow test:"+rowid);
 			var uuid = webdwui.uuid; //后台数据窗口的名字
 			var iret2 = 0;
 			iret2 = webdwui.setrow(uuid,rowid);
 		}
 		
+		//setdata
 		function setData(rowid,colid,value) {
-			alert("setdata test:"+value);
+			console.log("setdata test:"+value);
 			var uuid = webdwui.uuid; //后台数据窗口的名字
 			var iret2 = 0;
 			iret2 = webdwui.setdata(uuid,rowid,colid,value);
