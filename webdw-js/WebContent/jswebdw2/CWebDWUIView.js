@@ -138,8 +138,8 @@ class CWebDWUIView{
 	/**
 	 * 这一方法用来在界面上设置数据窗口对象，并检索后台数据
 	 */
-	retrieve(dwname){
-		var surl="/webdw/retrieve?dwname="+dwname;
+	retrieve(dwname,args){
+		var surl="/webdw/retrieve?dwname="+dwname+"&args="+args;
 		// 增加随机数
 		surl = surl+"&rand="+(Math.random()*100);
 		
@@ -166,26 +166,26 @@ class CWebDWUIView{
 	 */
 	setrow(uuid,rowid){
 		this.rowid = rowid;
-		var surl="/webdw/setrow?uuid="+uuid+"&rowid="+rowid;
+		//var surl="/webdw/setrow?uuid="+uuid+"&rowid="+rowid;
 		// 增加随机数
-		surl = surl+"&rand="+(Math.random()*100);
+		//surl = surl+"&rand="+(Math.random()*100);
 		
-		xmlHttpReturn="";
-		$.ajax({
-            type: "GET",
-            url: surl,
-            data: "",
-            async:false,
-            dataType: "json",
-            success: function(data){
-            	// get return data.
-				console.log(data);
-				xmlHttpReturn = data;
-				// 调用全局性的回调函数，回调函数在调用者的界面上进行定义
-				//WebdwUI_callback();
-				return xmlHttpReturn;
-            }
-		});
+		//xmlHttpReturn="";
+//		$.ajax({
+//            type: "GET",
+//            url: surl,
+//            data: "",
+//            async:false,
+//            dataType: "json",
+//            success: function(data){
+//            	// get return data.
+//				console.log(data);
+//				xmlHttpReturn = data;
+//				// 调用全局性的回调函数，回调函数在调用者的界面上进行定义
+//				//WebdwUI_callback();
+//				return xmlHttpReturn;
+//            }
+//		});
 	}
 	
 	/**
