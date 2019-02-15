@@ -45,10 +45,20 @@
 		//回调函数
 		function WebdwUI_callback() {
 			console.log("enter callback");
-			webdwui.uuid = xmlHttpReturn.uuid;
-			webdwui.uiArray = xmlHttpReturn.uiobjList;
-			webdwui.removeAllChild();
-			webdwui.drawAllChild();
+			var status = xmlHttpReturn.status;
+			console.log("status:"+status);
+			
+			if(status == 200){
+				webdwui.uuid = xmlHttpReturn.uuid;
+				webdwui.uiArray = xmlHttpReturn.uiobjList;
+				webdwui.removeAllChild();
+				webdwui.drawAllChild();	
+				alert(xmlHttpReturn.message);
+			}else{
+				console.log(xmlHttpReturn.message);
+				alert("Message:" + xmlHttpReturn.message);
+			}
+			
 		}
 		
 		//设置后台的数据窗口对象

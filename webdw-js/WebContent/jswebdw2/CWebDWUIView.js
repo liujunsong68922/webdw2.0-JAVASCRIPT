@@ -24,7 +24,7 @@ class CWebDWUIView{
 		}
 		var children = this.parentDom.children;
 		
-		console.log("children.length = "+children.length);
+		console.log("begin remove:children.length = "+children.length);
 		
 		for(var i=0;i<children.length;){
 			// 从第一个开始删除，于是一个一个全删除掉了
@@ -54,7 +54,7 @@ class CWebDWUIView{
 			// convert it to dom object
 			var uiComponent = new MyUIComponent(ui);
 			// append it to parentObject
-			console.log("i,classname:"+i+" ,"+uiComponent.classname);
+			//console.log("i,classname:"+i+" ,"+uiComponent.classname);
 			this.parentDom.appendChild(uiComponent.node);
 		}
 	}	
@@ -236,7 +236,7 @@ class CWebDWUIView{
 				console.log(data);
 				xmlHttpReturn = data;
 				// 调用全局性的回调函数，回调函数在调用者的界面上进行定义
-				//WebdwUI_callback();
+				WebdwUI_callback();
 				return xmlHttpReturn;
             }
 		});
