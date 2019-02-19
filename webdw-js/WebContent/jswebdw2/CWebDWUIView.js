@@ -1,4 +1,23 @@
 var xmlHttpReturn; // 定义Ajax调用以后产生的全局返回值存放位置,Ajax调用通过jQuery实现
+var _webdwui = null;
+
+//回调函数
+function WebdwUI_callback() {
+	console.log("enter callback");
+	var status = xmlHttpReturn.status;
+	console.log("status:"+status);
+
+	if(status == 200){
+		_webdwui.uuid = xmlHttpReturn.uuid;
+		_webdwui.uiArray = xmlHttpReturn.uiobjList;
+		_webdwui.removeAllChild();
+		_webdwui.drawAllChild();	
+		alert(xmlHttpReturn.message);
+	}else{
+		console.log(xmlHttpReturn.message);
+		alert("Message:" + xmlHttpReturn.message);
+	}
+}
 
 /**
  * 绘图展示对象，从后台获取数据集合，并在前台负责完成展示工作
@@ -13,6 +32,8 @@ class CWebDWUIView{
 		this.uuid =""; //记录uuid的值
 		this.rowid = 0; //当前行
 		this.colid = 0; //当前列序号
+		//保存对于对象的引用
+		_webdwui = this;
 	}
 	
 	// clean function
