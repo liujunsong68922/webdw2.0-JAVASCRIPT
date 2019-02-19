@@ -74,14 +74,14 @@
 			console.log("insert test");
 			var uuid = webdwui.uuid; //后台数据窗口的名字
 			var iret2 = 0;
-			iret2 = webdwui.insert("0",uuid);
+			iret2 = webdwui.insertrow("0",uuid);
 		}
 		
 		function deleteDW() {
 			console.log("delete test");
 			var uuid = webdwui.uuid; //后台数据窗口的名字
 			var iret2 = 0;
-			iret2 = webdwui.delete("0",uuid);
+			iret2 = webdwui.deleterow("0",uuid);
 		}
 		
 		//setrow
@@ -93,11 +93,11 @@
 		}
 		
 		//setdata
-		function setData(rowid,colid,value) {
-			console.log("setdata test:"+value);
+		function setItem(rowid,colid,value) {
+			console.log("setitem test:"+value);
 			var uuid = webdwui.uuid; //后台数据窗口的名字
 			var iret2 = 0;
-			iret2 = webdwui.setdata(uuid,rowid,colid,value);
+			iret2 = webdwui.setitem(uuid,rowid,colid,value);
 		}
 		
 		function updateDW() {

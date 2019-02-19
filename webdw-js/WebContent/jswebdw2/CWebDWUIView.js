@@ -88,8 +88,8 @@ class CWebDWUIView{
 	/**
 	 * setDataobject function 这一方法用来在界面上设置数据窗口对象
 	 */
-	insert(token,uuid){
-		var surl="/webdw/insert?token="+token+"&uuid="+uuid;
+	insertrow(token,uuid){
+		var surl="/webdw/insertrow?token="+token+"&uuid="+uuid;
 		// 增加随机数
 		surl = surl+"&rand="+(Math.random()*100);
 		
@@ -113,8 +113,8 @@ class CWebDWUIView{
 	/**
 	 * setDataobject function 这一方法用来在界面上设置数据窗口对象
 	 */
-	delete(token,uuid){
-		var surl="/webdw/delete?token="+token+"&uuid="+uuid+"&rowid="+this.rowid;
+	deleterow(token,uuid){
+		var surl="/webdw/deleterow?token="+token+"&uuid="+uuid+"&rowid="+this.rowid;
 		// 增加随机数
 		surl = surl+"&rand="+(Math.random()*100);
 		
@@ -191,9 +191,9 @@ class CWebDWUIView{
 	/**
 	 * 这一方法用来在界面上设置数据窗口对象，并检索后台数据
 	 */
-	setdata(uuid,rowid,colid,data){
+	setitem(uuid,rowid,colid,data){
 		this.rowid = rowid;
-		var surl="/webdw/setdata?uuid="+uuid+"&rowid="+rowid+"&colid="+colid+"&data="+data;
+		var surl="/webdw/setitem?uuid="+uuid+"&rowid="+rowid+"&colid="+colid+"&data="+data;
 		// 增加随机数
 		surl = surl+"&rand="+(Math.random()*100);
 		
@@ -335,7 +335,7 @@ class MyUIComponent{
             //when datachange, modify buffer data value
             input.onchange = function(){
             	//alert("onchange");
-            	setData(input.rowid,input.colid,input.value);
+            	setItem(input.rowid,input.colid,input.value);
             }
             node.appendChild(input);
 			this.node = node;
